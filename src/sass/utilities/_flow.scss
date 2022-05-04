@@ -1,0 +1,71 @@
+@use '../abstracts/breakpoints';
+
+// Margin
+$margin-hg: 15rem;
+$margin-xl: 10rem;
+$margin-lg: 8rem;
+$margin-md: 5rem;
+$margin-sm: 1.5rem;
+$margin-sm-neg: -1.5rem;
+$margin-md-neg: -5rem;
+$margin-lg-neg: -8rem;
+$margin-xl-neg: -10rem;
+$margin-hg-neg: -15rem;
+
+// Padding
+$padding-xl: 10rem;
+$padding-lg: 7rem;
+$padding-md: 5rem;
+$padding-sm: 3rem;
+$padding-mn: 1rem;
+
+.container-main > * {
+  padding-inline: $padding-md;
+
+  @include breakpoints.respond(phone-reg) {
+    padding-inline: $padding-sm;
+  }
+
+  @include breakpoints.respond(phone-mini) {
+    padding-inline: $padding-mn;
+  }
+}
+
+.awards {
+  margin-block: $margin-lg;
+
+  @include breakpoints.respond(phone-reg) {
+    margin-block: $margin-md;
+    padding-inline: 0;
+  }
+}
+
+.services {
+  margin-block: $margin-lg;
+  padding-block: $padding-md;
+}
+
+.about {
+  margin-block: $margin-lg;
+  padding-block: $padding-md;
+}
+
+.victories {
+  margin-block: $margin-hg;
+  padding-block: $padding-md;
+}
+
+.stories {
+  margin-block: $margin-lg;
+  padding-block: $padding-md;
+}
+
+.book {
+  margin-block: $margin-lg;
+  padding-block: $padding-md;
+}
+
+.footer {
+  margin-block: $margin-md;
+  padding-block: $padding-sm;
+}

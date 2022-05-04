@@ -1,0 +1,41 @@
+@use '../abstracts/mixins';
+
+//navigation
+.sticky {
+  position: fixed;
+  width: 100vw;
+  @include mixins.glass-gradient;
+}
+
+//reveal sections
+.reveal-section {
+  transition: transform 1s, opacity 1s;
+}
+
+.hidden-section {
+  opacity: 0;
+  transform: translateY(8rem);
+}
+
+//animation
+.move-in--left {
+  animation: moveInLeft 1.5s backwards ease-out;
+}
+
+.move-in--right {
+  animation: moveInRight 1.5s backwards ease-out;
+}
+
+.hidden {
+  opacity: 0;
+}
+
+.reveal {
+  animation: fade-in 1s forwards ease-out;
+}
+
+.pick-card {
+  transform: rotateX(0deg) scale(1);
+  box-shadow: none;
+  border: none;
+}

@@ -1,0 +1,179 @@
+@use '../abstracts/breakpoints';
+@use '../abstracts/mixins';
+
+// To hide in Tab-Land
+.burger {
+  // children-1
+  &__checkbox {
+    display: none;
+  }
+
+  &__svg {
+    display: none;
+  }
+}
+
+// To pop up in Tab-port
+@include breakpoints.respond(tab-port) {
+  .burger {
+    position: absolute;
+    z-index: 200;
+
+    //children-2
+    &__button {
+      //position
+      position: fixed;
+      top: 1rem;
+      left: 1rem;
+      display: block;
+      z-index: 200;
+
+      //sizing
+      height: 6rem;
+      width: 6rem;
+
+      //styling
+      background-color: transparent;
+      cursor: pointer;
+    }
+
+    //burger svg
+    &__svg {
+      display: block;
+      height: 8rem;
+      width: 8rem;
+
+      @include breakpoints.respond(phone-reg) {
+        height: 6rem;
+        width: 6rem;
+      }
+    }
+
+    //lines
+    &__line {
+      fill: none;
+      stroke: var(--clr-neutral-600);
+      stroke-width: var(--svg-size-width); //6
+      transition: stroke-dasharray 600ms cubic-bezier(0.4, 0, 0.2, 1),
+        stroke-dashoffset 600ms cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    &__line1 {
+      stroke-dasharray: 60 207;
+      stroke-width: 6;
+    }
+    &__line2 {
+      stroke-dasharray: 60 60;
+      stroke-width: 6;
+    }
+    &__line3 {
+      stroke-dasharray: 60 207;
+      stroke-width: 6;
+    }
+    &__checkbox:checked + &__button &__line1 {
+      stroke-dasharray: 90 207;
+      stroke-dashoffset: -134;
+      stroke-width: 6;
+    }
+    &__checkbox:checked + &__button &__line2 {
+      stroke-dasharray: 1 60;
+      stroke-dashoffset: -30;
+      stroke-width: 6;
+    }
+    &__checkbox:checked + &__button &__line3 {
+      stroke-dasharray: 90 207;
+      stroke-dashoffset: -134;
+      stroke-width: 6;
+    }
+
+    //contents
+    &__content {
+      //position
+      position: relative;
+      top: 0rem;
+      left: 2rem;
+      display: block;
+      z-index: 100;
+
+      //sizing
+      height: 0;
+      width: 30rem;
+
+      //styling
+      transition: all 0.8s cubic-bezier(0.86, 0, 0.07, 1);
+      opacity: 0;
+      visibility: hidden;
+
+      //alignment
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      align-items: center;
+
+      //glass gradient
+      @include mixins.glass-gradient;
+
+      @include breakpoints.respond(phone-mini) {
+        width: 25rem;
+      }
+    }
+
+    &__logo-box {
+      color: var(--clr-neutral-300);
+      flex-basis: 20%;
+    }
+
+    &__list {
+      //sizing
+      flex-basis: 70%;
+
+      //typography
+      list-style: none;
+      z-index: 500;
+
+      //alignment
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    &__link {
+      //typography
+      font-size: 2rem;
+      font-weight: 300;
+      text-decoration: none;
+      text-transform: uppercase;
+      color: var(--clr-neutral-400);
+
+      //others
+      display: inline-block;
+      transition: all 0.4s;
+      padding: 1rem 2rem;
+
+      &:hover,
+      &:focus {
+        color: var(--clr-primary-300);
+      }
+
+      &:focus {
+        outline: none;
+      }
+
+      &:active {
+        color: var(--clr-neutral-100);
+      }
+    }
+
+    //Functionality
+    &__checkbox:checked + &__button &__content {
+      opacity: 1;
+      visibility: visible;
+      height: 50rem;
+
+      @include breakpoints.respond(phone-reg) {
+        height: 40rem;
+      }
+    }
+  }
+}

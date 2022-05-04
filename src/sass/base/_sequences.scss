@@ -1,0 +1,97 @@
+@use '../abstracts/breakpoints';
+
+// Send Letter Sequence
+.sent {
+  & .form__content {
+    animation: scaleLetter 1s forwards ease-in,
+      pushLetter 0.5s 1.33s forwards ease-out;
+    z-index: 9999;
+  }
+  & .form__side:nth-of-type(1) {
+    transform-origin: 0 100%;
+    animation: closeLetter 0.66s forwards ease-in;
+  }
+  & .form__side:nth-of-type(1) .form__heading,
+  .form__side:nth-of-type(1) .form__text {
+    animation: fadeOutText 0.66s forwards linear;
+  }
+  & .form__btn {
+    background-color: var(--clr-secondary-500);
+    color: var(--clr-neutral-100);
+  }
+  & .envelope {
+    animation: fadeInEnvelope 0.5s 1.33s forwards ease-out;
+  }
+  & .envelope__back {
+    z-index: 0;
+  }
+
+  & .result-message {
+    opacity: 1;
+    transform: translateY(12rem);
+  }
+}
+
+.sent-intro {
+  & .form__content {
+    animation: scaleLetter 1s forwards ease-in,
+      pushLetter 0.5s 1.33s forwards ease-out;
+    z-index: 9999;
+  }
+  & .form__side:nth-of-type(1) {
+    transform-origin: 0 100%;
+    animation: closeLetter 0.66s forwards ease-in;
+  }
+  & .form__side:nth-of-type(1) .form__heading,
+  .form__side:nth-of-type(1) .form__text {
+    animation: fadeOutText 0.66s forwards linear;
+  }
+  & .form__btn {
+    background-color: var(--clr-secondary-500);
+    color: var(--clr-neutral-100);
+  }
+  & .envelope {
+    animation: fadeInEnvelope 0.5s 1.33s forwards ease-out;
+  }
+  & .envelope__back {
+    z-index: 0;
+  }
+}
+
+// Hero Animation
+.hero-animation {
+  animation: background-in 2s backwards ease-in 1s;
+
+  //config
+  &::before,
+  & .hero__heading,
+  & .hero__btn {
+    transition: all 0.2s;
+  }
+
+  //glass gradient
+  &::before {
+    animation: widthDown 2s backwards ease-in 1s;
+  }
+
+  & .hero__heading {
+    animation: scaleUp 2s backwards ease-in 1s;
+
+    @include breakpoints.respond(tab-port) {
+      animation: scaleUp-mini 2s backwards ease-in 1s;
+    }
+  }
+
+  & .hero__btn {
+    animation: fade-in 2.5s backwards ease-in 1s;
+
+    // Button Unwrap
+    & .btn-cta__vertical {
+      animation: button-unwrap--vertical 1s backwards ease-in 4s;
+    }
+
+    & .btn-cta__horizontal {
+      animation: button-unwrap--horizontal 1s backwards ease-in 4s;
+    }
+  }
+}

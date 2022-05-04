@@ -1,0 +1,232 @@
+@use '../abstracts/breakpoints';
+@use '../utilities/flow';
+@use '../abstracts/variables';
+
+.form {
+  width: 35rem;
+  position: relative;
+  transition: all 0.8s ease;
+
+  @include breakpoints.respond(phone-mini) {
+    width: 25rem;
+  }
+
+  &__content {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    margin: auto;
+    perspective: 60rem;
+    width: 30rem;
+  }
+
+  &__side {
+    //styling
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    border-right: 3px solid var(--clr-white-opacity-100);
+    border-bottom: 3px solid var(--clr-white-opacity-100);
+    outline: 3px solid transparent;
+    box-shadow: variables.$shadow-white-light;
+
+    //layout
+    padding: 2rem;
+    height: 12rem;
+
+    //shaping
+    &--1 {
+      border-radius: 1rem 1rem 0 0;
+      background-image: linear-gradient(
+        to bottom right,
+        var(--clr-white-opacity-100),
+        transparent
+      );
+    }
+    &--2 {
+      border-radius: 0 0 1rem 1rem;
+      background-image: linear-gradient(
+        to bottom,
+        var(--clr-white-opacity-100),
+        transparent
+      );
+    }
+  }
+
+  &__heading {
+    font-size: 2.5rem;
+    margin-bottom: flow.$margin-sm;
+  }
+
+  &__text,
+  &__input,
+  &__btn {
+    line-height: 1.5rem;
+    border: 0;
+    outline: none;
+    font-family: inherit;
+    appearance: none;
+  }
+
+  &__text,
+  &__input {
+    background-color: transparent;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='10' height='24'><rect fill='hsl(0, 0%, 15%)' x='0' y='23' width='10' height='1'/></svg>");
+    color: var(--clr-neutral-100);
+
+    &:invalid {
+      border-bottom: 2px solid var(--clr-secondary-500);
+    }
+  }
+
+  &__input[type='text']:focus,
+  &__input[type='email']:focus,
+  &__text:focus {
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='10' height='24'><rect fill='hsl(0, 0%, 50%)' x='0' y='23' width='10' height='1'/></svg>");
+    outline: none;
+    border-bottom: 1px solid var(--clr-neutral-500);
+  }
+
+  &__text {
+    width: 100%;
+    height: 8rem;
+    resize: none;
+  }
+
+  &__input {
+    width: 80%;
+    margin-bottom: 1rem;
+    border-bottom: 1px solid var(--clr-neutral-800);
+  }
+
+  &__btn {
+    //layout
+    position: absolute;
+    bottom: 1rem;
+    right: 1rem;
+    transition: all 0.2s;
+
+    //sizing
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+
+    //reset
+    appearance: none;
+    cursor: pointer;
+
+    //styling
+    text-transform: uppercase;
+    box-shadow: inset 0 0 0 1px var(--clr-neutral-900);
+    border-radius: 0.25rem;
+    background-color: var(--clr-primary-300);
+
+    &:hover,
+    &:focus {
+      transform: translateY(-3px);
+    }
+
+    &:focus {
+      outline: none;
+    }
+
+    &:active {
+      transform: translateY(3px);
+    }
+
+    &:disabled {
+      background-color: var(--clr-neutral-800);
+    }
+  }
+}
+
+// Envelope
+.envelope {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  margin: auto;
+
+  @include breakpoints.respond(phone-mini) {
+    left: 5rem;
+  }
+
+  &__front {
+    //sizing
+    width: 10rem;
+    height: 6rem;
+    overflow: hidden;
+
+    //appearance
+    border-radius: 0 0 1rem 1rem;
+    z-index: 9999;
+    opacity: 0;
+
+    &::before,
+    &::after {
+      //sizing
+      width: 12rem;
+      height: 6rem;
+
+      //position
+      position: absolute;
+      display: block;
+      content: '';
+
+      //styling
+      background-color: var(--clr-neutral-800);
+      transform: rotate(30deg);
+      transform-origin: 0 0;
+      box-shadow: variables.$shadow-black-dark;
+    }
+
+    &::after {
+      right: 0;
+      transform: rotate(-30deg);
+      transform-origin: 100% 0;
+    }
+  }
+
+  &__back {
+    //sizing
+    width: 10rem;
+    height: 10rem;
+    overflow: hidden;
+
+    //position
+    top: -4rem;
+    z-index: -9998;
+
+    //appearance
+    opacity: 0;
+    transform: translateY(-6rem);
+
+    &::before {
+      //sizing
+      content: '';
+      display: block;
+      width: 10rem;
+      height: 10rem;
+
+      //styling
+      background-color: var(--clr-neutral-800);
+      border-radius: 1rem;
+      transform: scaleY(0.6) rotate(45deg);
+    }
+  }
+}
+
+// Result Message
+.result-message {
+  text-align: center;
+  opacity: 0;
+  transition: all 0.3s 2s;
+  transform: translateY(9rem);
+  z-index: -9999;
+
+  @include breakpoints.respond(phone-mini) {
+    position: relative;
+    left: 10%;
+    z-index: 333;
+  }
+}

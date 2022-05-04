@@ -1,0 +1,49 @@
+@use '../abstracts/breakpoints';
+@use '../abstracts/mixins';
+@use '../utilities/flow';
+
+.hero {
+  position: relative;
+
+  & > * {
+    position: absolute;
+  }
+
+  //children-1
+  &__box--1 {
+    width: 30%;
+    top: 35%;
+    left: 15%;
+
+    //730px
+    @media only screen and (max-width: 45.625em) {
+      left: 3%;
+    }
+
+    //350px
+    @media only screen and (max-width: 21.875em) {
+      left: 1%;
+    }
+  }
+
+  &__btn {
+    margin-top: flow.$margin-md;
+    position: relative;
+    left: 2rem;
+  }
+
+  //glass
+  &::before {
+    //size
+    inset: 0;
+    height: 100vh;
+    width: 50vw;
+    content: '';
+
+    //glass gradient
+    @include mixins.glass-gradient;
+
+    //position
+    position: absolute;
+  }
+}

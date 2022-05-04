@@ -1,0 +1,66 @@
+@use 'breakpoints';
+@use 'variables';
+
+// Carousel
+$slide-scale: (
+  'regular': (
+    width: 20rem,
+    height: 45rem,
+  ),
+  'small': (
+    width: 90vw,
+    height: 40rem,
+  ),
+);
+
+:root {
+  @each $size, $props in $slide-scale {
+    @if $size == 'regular' {
+      @each $prop, $value in $props {
+        --slide-size-#{$prop}: #{$value};
+      }
+    } @else {
+      //730px
+      @media only screen and (max-width: 45.625em) {
+        @each $prop, $value in $props {
+          --slide-size-#{$prop}: #{$value};
+        }
+      }
+    }
+  }
+}
+
+// Photos
+$image-scale: (
+  'regular': (
+    width: 12rem,
+    height: 12rem,
+  ),
+  'small': (
+    width: 9rem,
+    height: 9rem,
+  ),
+);
+
+:root {
+  @each $size, $props in $image-scale {
+    @if $size == 'regular' {
+      @each $prop, $value in $props {
+        --image-size-#{$prop}: #{$value};
+      }
+    } @else {
+      @include breakpoints.respond(phone-reg) {
+        @each $prop, $value in $props {
+          --image-size-#{$prop}: #{$value};
+        }
+      }
+    }
+  }
+}
+
+.image {
+  width: var(--image-size-width);
+  height: var(--image-size-height);
+  object-fit: cover;
+  box-shadow: variables.$shadow-black-dark;
+}

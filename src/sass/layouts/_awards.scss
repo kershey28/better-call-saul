@@ -1,0 +1,70 @@
+@use '../abstracts/breakpoints';
+@use '../utilities/flow';
+
+.awards {
+  //children-1
+  &__text-box {
+    margin-top: flow.$margin-sm;
+    margin-bottom: flow.$margin-hg;
+    position: relative;
+    text-align: end;
+
+    @include breakpoints.respond(phone-reg) {
+      margin-bottom: flow.$margin-lg;
+      text-align: start;
+      line-height: 1.6;
+      left: 5rem;
+    }
+
+    //480px
+    @media only screen and (max-width: 30em) {
+      width: 30%;
+    }
+  }
+
+  &__heading {
+    margin-bottom: flow.$margin-md;
+  }
+
+  &__best {
+    position: relative;
+  }
+
+  &__second {
+    position: absolute;
+    transform: rotate(-20deg);
+    top: -4rem;
+    left: -12rem;
+
+    text-align: center;
+    width: 45%;
+
+    @include breakpoints.respond(tab-port) {
+      right: 35vw;
+    }
+
+    //663px -600px
+    @media only screen and (min-width: 37.5em) and (max-width: 41.4375em) {
+      left: 43%;
+      top: -10%;
+    }
+
+    @include breakpoints.respond(phone-reg) {
+      left: -6rem;
+      top: -3rem;
+    }
+  }
+
+  //children-2
+  &__composition {
+    //730px
+    @media only screen and (max-width: 45.625em) {
+      position: relative;
+      left: 5%;
+    }
+
+    @include breakpoints.respond(phone-mini) {
+      left: 2%;
+    }
+  }
+}

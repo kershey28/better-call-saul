@@ -1,0 +1,43 @@
+@use '../abstracts/breakpoints';
+
+// main Container
+.container-main {
+  background-color: var(--clr-neutral-900);
+  overflow: hidden;
+}
+
+// childrens
+.hero {
+  background-image: linear-gradient(
+      to bottom right,
+      var(--clr-black-opacity-500),
+      var(--clr-black-opacity-400),
+      var(--clr-black-opacity-300),
+      transparent,
+      transparent
+    ),
+    url(../../assets/img/main/hero.png);
+  background-size: cover;
+  background-position: center;
+
+  @include breakpoints.respond(phone-reg) {
+    background-image: linear-gradient(
+        to bottom right,
+        var(--clr-black-opacity-500),
+        var(--clr-black-opacity-400),
+        var(--clr-black-opacity-300),
+        transparent,
+        transparent
+      ),
+      url(../../assets/img/main/hero-small.png);
+  }
+}
+
+.services,
+.about,
+.victories,
+.stories,
+.book,
+.footer {
+  border-top: 3px dashed var(--clr-neutral-800);
+}

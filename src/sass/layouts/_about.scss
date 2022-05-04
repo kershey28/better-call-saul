@@ -1,0 +1,45 @@
+@use '../abstracts/breakpoints';
+@use '../abstracts/mixins';
+@use '../utilities/flow';
+
+.about {
+  text-align: end;
+
+  @include breakpoints.respond(phone-reg) {
+    text-align: start;
+  }
+
+  //children-1
+  &__heading {
+    margin-bottom: flow.$margin-lg;
+
+    @include breakpoints.respond(tab-port) {
+      margin-bottom: flow.$margin-md;
+      width: 100%;
+    }
+  }
+
+  &__img-box {
+    position: relative;
+    flex-basis: 10%;
+
+    //vignette
+    @include mixins.vignette();
+  }
+
+  &__img {
+    height: 70rem;
+
+    @include breakpoints.respond(phone-reg) {
+      height: 100vw;
+    }
+  }
+
+  &__text-box {
+    flex-basis: 80%;
+  }
+
+  &__sub-heading {
+    margin-bottom: flow.$margin-md;
+  }
+}

@@ -1,0 +1,40 @@
+@use '../abstracts/breakpoints';
+@use '../utilities/flow';
+
+.stories {
+  text-align: end;
+
+  @include breakpoints.respond(phone-reg) {
+    text-align: start;
+  }
+
+  //children-1
+  &__heading {
+    margin-bottom: flow.$margin-lg;
+  }
+
+  //children-2
+  &__sub-heading {
+    margin-bottom: flow.$margin-sm;
+
+    @include breakpoints.respond(phone-reg) {
+      margin-bottom: flow.$margin-md;
+    }
+  }
+
+  //children-3
+  &__paragraph {
+    margin-bottom: flow.$margin-hg;
+    width: 50%;
+    margin-left: auto;
+
+    @include breakpoints.respond(phone-reg) {
+      display: none;
+    }
+  }
+
+  //children-4
+  &__content {
+    margin-bottom: flow.$margin-lg;
+  }
+}

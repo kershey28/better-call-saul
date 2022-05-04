@@ -1,0 +1,28 @@
+@use '../abstracts/breakpoints';
+@use '../utilities/flow';
+
+.services {
+  //children-1
+  &__heading {
+    margin-bottom: flow.$margin-hg;
+  }
+
+  //children-2
+  &__content {
+    position: relative;
+  }
+
+  &__text-box {
+    flex-basis: 10%;
+
+    @include breakpoints.respond(tab-port) {
+      margin-bottom: flow.$margin-lg;
+      text-align: center;
+    }
+  }
+
+  &__slider {
+    flex-basis: 70%;
+    margin-top: flow.$margin-lg;
+  }
+}

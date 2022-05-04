@@ -1,0 +1,66 @@
+@use '../abstracts/breakpoints';
+
+// main container
+.container-main {
+  display: grid;
+  grid-template-rows: 100vh repeat(7, min-content);
+}
+
+// childrens
+.services {
+  &__content {
+    display: flex;
+    justify-content: space-between;
+
+    @include breakpoints.respond(tab-port) {
+      flex-direction: column;
+    }
+  }
+}
+
+.about {
+  &__content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    @include breakpoints.respond(tab-port) {
+      flex-direction: column;
+    }
+  }
+}
+
+.stories {
+  &__content {
+    display: flex;
+    justify-content: space-around;
+
+    @include breakpoints.respond(tab-land) {
+      flex-direction: column;
+      align-items: center;
+      gap: 10rem;
+    }
+  }
+}
+
+.book {
+  &__content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    @include breakpoints.respond(tab-land) {
+      flex-direction: column-reverse;
+      align-items: center;
+      gap: 10rem;
+    }
+  }
+
+  &__form {
+    flex-basis: 50%;
+  }
+
+  &__img-box {
+    flex-basis: 50%;
+  }
+}

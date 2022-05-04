@@ -1,0 +1,42 @@
+.logo {
+  font-family: var(--ff-accent);
+  color: var(--clr-neutral-600);
+  font-weight: 100;
+  position: relative;
+
+  &__heading {
+    font-weight: 400;
+    font-size: var(--fs-subheading);
+  }
+
+  &__sub-heading {
+    font-family: var(--ff-cursive);
+    font-size: var(--fs-subheading);
+    font-weight: 100;
+    position: relative;
+    left: 5.7rem;
+    bottom: 1rem;
+    height: 2rem;
+    color: var(--clr-primary-300);
+
+    //901px - 962px
+    @media only screen and (max-width: 60.125em) and (min-width: 56.3125em) {
+      left: -0.5rem;
+      bottom: 1rem;
+    }
+  }
+
+  &__scale {
+    height: 3rem;
+    width: 5rem;
+    position: absolute;
+    top: 1.5rem;
+    right: -4.5rem;
+
+    //901px - 962px
+    @media only screen and (max-width: 60.125em) and (min-width: 56.3125em) {
+      top: 4rem;
+      right: 1rem;
+    }
+  }
+}

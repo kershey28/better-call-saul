@@ -1,0 +1,37 @@
+@use '../abstracts/breakpoints';
+@use '../utilities/flow';
+
+.victories {
+  height: 70rem;
+  position: relative;
+
+  @include breakpoints.respond(tab-port) {
+    height: 110rem;
+  }
+
+  //children-1
+  &__heading {
+    margin-bottom: flow.$margin-lg;
+  }
+
+  &__sub-heading {
+    margin-bottom: flow.$margin-sm;
+  }
+
+  &__paragraph {
+    width: 50%;
+
+    @include breakpoints.respond(tab-port) {
+      width: 100%;
+    }
+  }
+
+  &__btn {
+    margin-top: flow.$margin-lg;
+  }
+
+  //children-3
+  &__cards {
+    margin-top: flow.$margin-lg-neg;
+  }
+}

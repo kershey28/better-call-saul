@@ -1,0 +1,152 @@
+@use '../abstracts/variables';
+@use '../abstracts/breakpoints';
+@use '../utilities/flow';
+
+.cards {
+  transform: perspective(900px);
+  transform-style: preserve-3d;
+
+  //children
+  &__card {
+    //layout
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    //alignment
+    position: absolute;
+    text-align: start;
+    margin-block: flow.$margin-sm;
+
+    //sizing
+    width: 29rem;
+    height: 40rem;
+    overflow: hidden;
+
+    //styling
+    background-image: linear-gradient(
+      to right bottom,
+      var(--clr-white-opacity-100),
+      var(--clr-white-opacity-100),
+      transparent
+    );
+    border-right: 1px solid var(--clr-white-opacity-100);
+    border-bottom: 1px solid var(--clr-white-opacity-100);
+    border-radius: 15px;
+
+    //appearance
+    transform: rotateX(75deg) translateY(-200px) translateZ(-100px) scale(0.8);
+    box-shadow: variables.$shadow-white-light;
+    transition: all 0.8s ease-out;
+
+    &:hover,
+    &:focus {
+      transform: rotateX(0deg) scale(1);
+      box-shadow: none;
+      border: none;
+
+      @include breakpoints.respond(tab-port) {
+        color: var(--clr-neutral-300);
+      }
+    }
+
+    //individual card
+    &--1 {
+      left: 5%;
+
+      @include breakpoints.respond(tab-land) {
+        left: -5rem;
+      }
+
+      @include breakpoints.respond(tab-port) {
+        left: 0;
+        top: 40rem;
+        transform: rotateX(75deg) translateY(-200px) translateZ(-100px)
+          scale(0.8);
+      }
+
+      @include breakpoints.respond(phone-reg) {
+        left: 10%;
+      }
+
+      @include breakpoints.respond(phone-mini) {
+        left: 0%;
+      }
+    }
+
+    &--2 {
+      left: 40%;
+
+      @include breakpoints.respond(tab-land) {
+        left: 23rem;
+      }
+
+      @include breakpoints.respond(tab-port) {
+        left: 23%;
+        top: 15rem;
+        transform: rotateX(75deg) translateY(-200px) translateZ(-100px)
+          scale(0.6);
+      }
+
+      @include breakpoints.respond(phone-reg) {
+        left: 10%;
+      }
+
+      @include breakpoints.respond(phone-mini) {
+        left: 0%;
+      }
+    }
+
+    &--3 {
+      right: 5%;
+
+      @include breakpoints.respond(tab-land) {
+        left: 51rem;
+      }
+
+      @include breakpoints.respond(tab-port) {
+        left: 40%;
+        transform: rotateX(75deg) translateY(-200px) translateZ(-100px)
+          scale(0.4);
+      }
+
+      @include breakpoints.respond(phone-reg) {
+        left: 11%;
+      }
+
+      @include breakpoints.respond(phone-mini) {
+        left: 0%;
+      }
+    }
+
+    & > * {
+      margin-bottom: flow.$margin-sm;
+    }
+  }
+
+  //contents
+  &__img {
+    width: 15rem;
+    height: 15rem;
+    transform: translateY(15px);
+  }
+
+  &__heading {
+    font-size: 2rem;
+    transform: translateY(10px);
+  }
+
+  &__date {
+    text-transform: uppercase;
+  }
+
+  &__paragraph {
+    width: 24rem;
+    transform: translateX(12px);
+  }
+
+  &:hover &__card:not(:hover) {
+    filter: blur(10px);
+  }
+}

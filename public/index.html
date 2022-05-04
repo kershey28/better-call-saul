@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <title>Better Call Saul</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link
+      rel="shortcut icon"
+      type="image/png"
+      href="assets/img/main/scale.png"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Whisper&display=swap"
+      rel="stylesheet"
+    />
+    <script defer src="js/index.js"></script>
+  </head>
+
+  <body>
+    <div class="container-main">
+      <!--Main Container-->
+
+      <!--Navigation-->
+      <div class="navigation burger">
+
+        <input type="checkbox" class="burger__checkbox" id="navi-toggle"/>
+        <label class="navigation__tab burger__button" for="navi-toggle">
+          <svg width="100" height="100" viewBox="0 0 100 100" class="burger__svg">
+            <path class="burger__line burger__line1" d="M 20,29.000046 H 80.000231 C 80.000231,29.000046 94.498839,28.817352 94.532987,66.711331 94.543142,77.980673 90.966081,81.670246 85.259173,81.668997 79.552261,81.667751 75.000211,74.999942 75.000211,74.999942 L 25.000021,25.000058" />
+            <path class="burger__line burger__line2" d="M 20,50 H 80" />
+            <path class="burger__line burger__line3" d="M 20,70.999954 H 80.000231 C 80.000231,70.999954 94.498839,71.182648 94.532987,33.288669 94.543142,22.019327 90.966081,18.329754 85.259173,18.331003 79.552261,18.332249 75.000211,25.000058 75.000211,25.000058 L 25.000021,74.999942" />
+          </svg>
+
+          <nav class="navigation__content burger__content">
+            <div class="navigation__logo-box burger__logo-box logo">
+              <p class="logo__heading">Better Call</p>
+              <p class="logo__sub-heading">Saul</p>
+              <img class="logo__scale" src="assets/img/main/scale.png">
+            </div>
+
+            <ul class="navigation__list burger__list">
+              <li class="navigation__item burger__item">
+                <a href="#about-us" class="navigation__link burger__link">About Me</a>
+              </li>
+              <li class="navigation__item burger__item">
+                <a href="#awards" class="navigation__link burger__link">Awards</a>
+              </li>
+              <li class="navigation__item burger__item">
+                <a href="#services" class="navigation__link burger__link">Services</a>
+              </li>
+              <li class="navigation__item burger__item">
+                <a href="#victories" class="navigation__link burger__link">Victories</a>
+              </li>
+              <li class="navigation__item burger__item">
+                <a href="#stories" class="navigation__link burger__link">Stories</a>
+              </li>
+              <li class="navigation__item burger__item">
+                <a href="#book" class="navigation__link burger__link uppercase">Consult now</a>
+              </li>
+            </ul>
+          </nav>
+
+        </label>
+      </div>
+      <!--Navigation-->
+
+      <!--Hero-->
+      <header class="hero hero-animation" id="hero">
+
+        <div class="hero__box--1">
+          <h1 class="heading-1 hero__heading">
+            <span>In</span>
+            <span class="gradient--primary-subtle">legal</span>
+            <span>trouble?</span> 
+          </h1>
+
+          <a href="#book" class="hero__btn btn-cta">
+            <div class="btn-cta__horizontal"></div>
+            <div class="btn-cta__vertical"></div>
+            Call Saul
+          </a>
+        </div>
+
+      </header>
+      <!--Hero-->
+
+      <!--Awards-->
+      <div class="awards reveal-section" id="awards">
+
+        <div class="awards__text-box">
+          <h1 class="awards__heading heading-1">
+            World's
+            <span class="gradient--primary-regular awards__best">
+              <span class="gradient--secondary-subtle awards__second cursive">2nd</span> 
+              Best Lawyer
+            </span>
+          </h1>
+        </div>
+
+        <div class="awards__composition composition">
+          <img 
+            src="assets/img/awards/awards-1.png" 
+            alt="Photo 1"
+            class="image awards__img composition__img composition__img--1">
+          <img 
+            src="assets/img/awards/awards-2.png" 
+            alt="Photo 2"
+            class="image awards__img composition__img composition__img--2">
+          <img 
+            src="assets/img/awards/awards-3.png" 
+            alt="Photo 3"
+            class="image awards__img composition__img composition__img--3">
+          <img 
+            src="assets/img/awards/awards-4.png" 
+            alt="Photo 4"
+            class="image awards__img composition__img composition__img--4">
+          <img 
+            src="assets/img/awards/awards-5.png" 
+            alt="Photo 5"
+            class="image awards__img composition__img composition__img--5">
+          <img 
+            src="assets/img/awards/awards-6.png" 
+            alt="Photo 6"
+            class="image awards__img composition__img composition__img--6">
+          <img 
+            src="assets/img/awards/awards-7.png" 
+            alt="Photo 7"
+            class="image awards__img composition__img composition__img--7">
+          <img 
+            src="assets/img/awards/awards-8.png" 
+            alt="Photo 8"
+            class="image awards__img composition__img composition__img--8">
+        </div>
+
+      </div>
+      <!--Awards-->
+
+      <!--Services-->
+      <div class="services reveal-section" id="services">
+
+        <h1 class="services__heading heading-1 gradient--primary-regular">
+          Practice Areas
+        </h1> 
+
+        <div class="services__content">
+
+          <div class="services__text-box">
+            <div class="dots"></div>
+            <h2 class="services__subheading heading-2">Services</h2>
+            <button class="slider__btn slider__btn--left">&larr;</button>
+            <button class="slider__btn slider__btn--right">&rarr;</button>
+            
+          </div>
+
+          <div class="slider services__slider">
+
+            <div class="slider__container">
+
+              <div class="slide">
+                <div class="slide__accordion">
+                  <h3 class="slide__accordion__summary heading-3">Drink Driving?</h3>
+                  <div class="slide__accordion__arrow">&#8595;</div>
+                  <div class="slide__accordion__details">
+                    <p>Don't drink and drive!</p>
+                    <p>But if you do...</p>
+                  </div>
+                  <a href="#book" class="slide__accordion__btn btn-cta">Better Call Saul! &#x260E;</a>
+                </div>
+                <img src="assets/img/services/services-1.jpg" alt="drink driving" class="slide__photo" /> 
+              </div>
+
+              <div class="slide">
+                <div class="slide__accordion">
+                  <h3 class="slide__accordion__summary heading-3">Stuck Stepsister?</h3>
+                  <div class="slide__accordion__arrow">&#8595;</div>
+                  <div class="slide__accordion__details">
+                    <p>I'll help your stepsister to get out.</p>
+                    <p>(without your mom finding out.)</p>
+                  </div>
+                  <a href="#book" class="slide__accordion__btn btn-cta">Call me---your Steplawyer &#x260E;</a>
+                </div>
+                <img src="assets/img/services/services-2.jpg" alt="stuck stepsister" class="slide__photo" /> 
+              </div>
+
+              <div class="slide">
+                <div class="slide__accordion">
+                  <h3 class="slide__accordion__summary heading-3">COVID Positive?</h3>
+                  <div class="slide__accordion__arrow">&#8595;</div>
+                  <div class="slide__accordion__details">
+                    <p>and you have a booked flight?</p>
+                    <p>Fun can't wait...</p>
+                  </div>
+                  <a href="#book" class="slide__accordion__btn btn-cta">Swab with Saul! &#x260E;</a>
+                </div>
+                <img src="assets/img/services/services-3.jpg" alt="COVID positive" class="slide__photo" /> 
+              </div>
+
+              <div class="slide">
+                <div class="slide__accordion">
+                  <h3 class="slide__accordion__summary heading-3">Drug Problem?</h3>
+                  <div class="slide__accordion__arrow">&#8595;</div>
+                  <div class="slide__accordion__details">
+                    <p>I'll turn that addiction into a prescription!</p>
+                    <p>Don't call a doctor,</p>
+                  </div>
+                  <a href="#book" class="slide__accordion__btn btn-cta">Call a lawyer! &#x260E;</a>
+                </div>
+                <img src="assets/img/services/services-4.jpg" alt="drug problem" class="slide__photo" /> 
+              </div>
+
+              <div class="slide">
+                <div class="slide__accordion">
+                  <h3 class="slide__accordion__summary heading-3">Cyberbullying?</h3>
+                  <div class="slide__accordion__arrow">&#8595;</div>
+                  <div class="slide__accordion__details">
+                    <p>Empathy is the key.</p>
+                    <p>In one click, an army of trolls will turn the table for you.</p>
+                  </div>
+                  <a href="#book" class="slide__accordion__btn btn-cta">Click with Saul! &#x260E;</a>
+                </div>
+                <img src="assets/img/services/services-5.jpg" alt="cyberbullying" class="slide__photo" /> 
+              </div>
+
+              <div class="slide">
+                <div class="slide__accordion">
+                  <h3 class="slide__accordion__summary heading-3">Warrant of Arrest?</h3>
+                  <div class="slide__accordion__arrow">&#8595;</div>
+                  <div class="slide__accordion__details">
+                    <p>I know a guy</p>
+                    <p>who knows a guy</p>  
+                    <p>who will take care of it</p>
+                  </div>
+                  <a href="#book" class="slide__accordion__btn btn-cta">Let's call the guy! &#x260E;</a>
+                </div>
+                <img src="assets/img/services/services-6.jpg" alt="warrant of arrest" class="slide__photo" /> 
+              </div>
+
+              <div class="slide">
+                <div class="slide__accordion">
+                  <h3 class="slide__accordion__summary heading-3">Secret Affair?</h3>
+                  <div class="slide__accordion__arrow">&#8595;</div>
+                  <div class="slide__accordion__details">
+                    <p>Ill prove you're innocent on the witness stand</p>
+                    <p>(and help you find another one-night stand)</p>
+                  </div>
+                  <a href="#book" class="slide__accordion__btn btn-cta">Stand with Saul! &#x260E;</a>
+                </div>
+                <img src="assets/img/services/services-7.jpg" alt="secret affair" class="slide__photo" /> 
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <!--Services-->
+
+      <!--About-->
+      <div class="about reveal-section" id="about-us">
+
+        <h1 class="about__heading heading-1 gradient--primary-regular">Why Call Saul?</h1>
+
+        <div class="about__content">
+
+          <div class="about__img-box">
+            <picture>
+              <source media="(min-width: 601px)" srcset="assets/img/main/about.png">
+              <source media="(max-width: 600px)" srcset="assets/img/main/about-small.png">
+              <img src="assets/img/main/about-small.png" alt="about saul" class='about__img'/> 
+            </picture>
+            
+          </div>
+
+          <div class="about__text-box">
+            <h2 class="about__sub-heading heading-2">I'm 
+              <span class="gradient--secondary-regular">
+                number one
+              </span> on your 
+              <span class="gradient--secondary-regular">
+                speed dial
+              </span>, right next to your weed dealer.</h2>
+              <p class="about__paragraph">
+                I'm Saul Goodman. Did you know that you have rights? The Constitution says you do. And so do I. I believe that until proven guilty, every man, woman, and child in this country is innocent. And that's why I fight for you. Call me, and I will deliver speedy justice for you!
+              </p>
+          </div>
+
+        </div>
+      </div>
+      <!--About-->
+
+      <!--Victories-->
+      <div class="victories reveal-section" id="victories">
+
+        <h1 class="victories__heading heading-1 gradient--primary-regular">Victories</h1>
+
+        <div class="victories__text-box">
+          <h2 class="victories__sub-heading heading-2">
+          <span class="gradient--secondary-regular">Justice</span> 
+          Matters Most</h2>
+          <p class="victories__paragraph">Using my expertise and experience, I solve my clients' cases to obtain the results they aim in their particular situation. I have known as the lawyer that you can trust, for solving cases despite how bad the cases are.</p>
+          <a href="#" class="victories__btn btn-text">See more cases &rarr;</a>
+        </div>
+       
+        <div class="cards victories__cards">
+          <div class="cards__card cards__card--1">
+            <img class="cards__img cards__img--1" src="assets/img/main/victory.png" alt="victory 1">
+            <h3 class="cards__heading gradient--primary-subtle">Marcos's Estate Tax</h3>
+            <div class="cards__date">March 2022</div>
+            <p class="cards__paragraph">P203-Billion estate tax liabilities owned by the descendants of former President Marcos to the government.</p>
+          </div>
+        
+          <div class="cards__card cards__card--2">
+            <img class="cards__img cards__img--2" src="assets/img/main/victory.png" alt="victory 2">
+            <h3 class="cards__heading gradient--primary-subtle">SAF 44</h3>
+            <div class="cards__date">Jan 2021</div>
+            <p class="cards__paragraph">44 police commandos were killed in a botched mission to capture a Malaysian bomber in Mamasapano town.</p>
+          </div>
+        
+          <div class="cards__card cards__card--3">
+            <img class="cards__img cards__img--3" src="assets/img/main/victory.png" alt="victory 3">
+            <h3 class="cards__heading gradient--primary-subtle">Heist in Bank of Spain</h3>
+            <div class="cards__date">Dec 2021</div>
+            <p class="cards__paragraph">The group of robbers who were wearing masks took 67 hostages while staying inside the bank for 11 days.</p>
+          </div>
+        </div>
+
+      </div>
+      <!--Victories-->
+
+      <!--Stories-->
+      <div class="stories reveal-section" id="stories">
+
+        <h1 class="heading-1 gradient--primary-regular stories__heading">Stories</h1>
+
+        <h2 class="heading-2 stories__sub-heading">What my clients 
+          <span class="gradient--secondary-regular">say</span></h2>
+        
+        <p class="stories__paragraph">I don't ask you to hear from me. I ask you to hear from them. I invite you to give me the opportunity to address your case and the possible solutions even if you do not end up retaining me.</p>
+
+        <div class="stories__content">
+          <figure class="story">
+            <figcaption class='story__caption'>
+              <blockquote class='story__quote'>At first, I was having doubt on consulting to Saul. But after I called him, he's goddamn right! I've really gotten the speedy justice he promised.</blockquote>
+              <h3 class="heading-3 story__author gradient--primary-regular">Walter White</h3>
+              <h3 class="heading-3 story__description">Professor</h3>
+            </figcaption>
+            
+            <div class="story__photo">
+              <picture>
+                <source media="(min-width: 601px)" srcset="assets/img/stories/story-1.jpg">
+                <source media="(max-width: 600px)" srcset="assets/img/stories/story-1-small.jpg">
+                <img src="assets/img/stories/story-1-small.jpg" alt="sq-sample10" class='story__img'/>
+              </picture>
+            </div>
+          </figure>
+          
+          <figure class="story">
+            <figcaption class='story__caption'>
+              <blockquote class='story__quote'>Saul eased my nerves, and helped me through one of the hardest processes I have ever had to go through in my life. No lawyers could cover my case, except this lawyer.</blockquote>
+              <h3 class="heading-3 story__author gradient--primary-regular">Lalo Salamanca</h3>
+              <h3 class="heading-3 story__description">Businessman</h3>
+            </figcaption>
+            
+            <div class="story__photo">
+              <picture>
+                <source media="(min-width: 601px)" srcset="assets/img/stories/story-2.jpg">
+                <source media="(max-width: 600px)" srcset="assets/img/stories/story-2-small.jpg">
+                <img src="assets/img/stories/story-2-small.jpg" alt="sq-sample10" class='story__img'/>
+              </picture>
+            </div>
+          </figure>
+        </div>
+
+        <a href="#" class="btn-text stories__btn">Read more stories &rarr;</a>
+
+      </div>
+      <!--Stories-->
+
+      <!--Book-->
+      <div class="book reveal-section" id="book">
+
+        <h1 class="book__heading heading-1 gradient--primary-regular">Consult Now</h1>
+
+        <h2 class="book__sub-heading heading-2">I'll 
+          <span class="gradient--secondary-regular">hear</span>
+           you out</h2>
+
+        <div class="book__content">
+
+          <form class="form book__form">
+            <div class="form__content">
+              
+              <div class="form__side form__side--1">
+                <h1 class="form__heading gradient--primary-regular heading-1">Message me</h1>
+                <textarea placeholder="Your message" class="form__text"></textarea>
+              </div>
+              
+              <div class="form__side form__side--2">
+                <input type="text" placeholder="Your name" class="form__input">
+                <input type="email" placeholder="Your email" class="form__input">
+                <button class="form__btn">Send</button>
+              </div>
+              
+            </div>
+            <div class="envelope envelope__front"></div>
+            <div class="envelope envelope__back"></div>
+            <p class="result-message">Thank you for your message</p>
+          </form>
+
+          <div class="book__img-box">
+            <picture>
+              <source media="(min-width: 601px)" srcset="assets/img/main/book.png">
+              <source media="(max-width: 600px)" srcset="assets/img/main/book-small.png">
+              <img src="assets/img/main/book-small.png" alt="about saul" class='book__img'/> 
+            </picture>
+          </div>
+        </div>
+
+      </div>
+      <!--Book-->
+
+      <!--Footer-->
+      <footer class="footer reveal-section">
+        <ul class="footer__nav">
+          <li class="footer__nav--item">
+            <a href="#" class="footer__nav--link">Cases</a>
+          </li>
+          <li class="footer__nav--item">
+            <a href="#" class="footer__nav--link">Contact me</a>
+          </li>
+          <li class="footer__nav--item">
+            <a href="#" class="footer__nav--link">Careers</a>
+          </li>
+          <li class="footer__nav--item">
+            <a href="#" class="footer__nav--link">Privacy Policy</a>
+          </li>
+          <li class="footer__nav--item">
+            <a href="#" class="footer__nav--link">Terms</a>
+          </li>
+        </ul>
+        <div class="footer__copyright">
+          <p>Built and designed by Kershey Cari&#241o for demo project only.</p>
+          <p>Disclaimer: photos that were used in this project are not mine.</p>
+          <p>&copy; The Mouse 2022</p>
+        </div>
+      </footer>
+      <!--Footer-->
+
+    </div>
+    <!--Main Container-->
+  </body>
+</html>

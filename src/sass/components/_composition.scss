@@ -1,0 +1,62 @@
+@use '../abstracts/breakpoints';
+
+.composition {
+  display: grid;
+  grid-template-columns: repeat(4, min-content);
+  justify-content: center;
+  align-items: center;
+  gap: 10rem;
+
+  @include breakpoints.respond(tab-port) {
+    gap: 5rem;
+  }
+
+  //730px
+  @media only screen and (max-width: 45.625em) {
+    grid-template-areas:
+      'one two three'
+      'four . five'
+      'six seven eight';
+
+    &__img--1 {
+      grid-area: one;
+    }
+
+    &__img--2 {
+      grid-area: two;
+    }
+
+    &__img--3 {
+      grid-area: three;
+    }
+
+    &__img--4 {
+      grid-area: four;
+    }
+
+    &__img--5 {
+      grid-area: five;
+    }
+
+    &__img--6 {
+      grid-area: six;
+    }
+
+    &__img--7 {
+      grid-area: seven;
+    }
+
+    &__img--8 {
+      grid-area: eight;
+    }
+  }
+
+  //480px
+  @media only screen and (max-width: 30em) {
+    gap: 3rem;
+  }
+
+  @include breakpoints.respond(phone-mini) {
+    gap: 2rem;
+  }
+}

@@ -1,0 +1,61 @@
+// To be visible only at 901px up
+@media only screen and (min-width: 56.26em) {
+  .navigation {
+    // layout
+    position: absolute;
+    z-index: 9000;
+    width: 100vw;
+
+    //animation
+    animation: fade-in 2.5s backwards ease-in 1s;
+
+    //background
+    background-image: linear-gradient(
+      to right,
+      var(--clr-black-opacity-100) 5%,
+      var(--clr-black-opacity-100) 95%
+    );
+
+    &__content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0.5rem 3rem;
+    }
+
+    &__list {
+      display: flex;
+      align-items: center;
+      list-style: none;
+    }
+
+    &__item {
+      margin-left: 4rem;
+    }
+
+    &__link {
+      //typography
+      font-size: 1.7rem;
+      font-weight: 400;
+      color: var(--clr-neutral-700);
+      text-decoration: none;
+
+      //others
+      display: block;
+      transition: all 0.3s;
+
+      &:hover,
+      &:focus {
+        color: var(--clr-primary-300);
+      }
+
+      &:focus {
+        outline: none;
+      }
+
+      &:active {
+        color: var(--clr-neutral-100);
+      }
+    }
+  }
+}

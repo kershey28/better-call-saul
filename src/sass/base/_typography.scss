@@ -1,0 +1,84 @@
+@use '../abstracts/breakpoints';
+
+///////////////////////////////////////////
+// Gradients
+@mixin gradient($type) {
+  display: inline-block;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+
+  @if $type == primary-regular {
+    background-image: linear-gradient(
+      to right,
+      var(--clr-primary-opacity-500),
+      var(--clr-primary-opacity-100)
+    );
+  }
+
+  @if $type == secondary-regular {
+    background-image: linear-gradient(
+      to right,
+      var(--clr-secondary-opacity-500),
+      var(--clr-secondary-opacity-100)
+    );
+  }
+
+  @if $type == primary-subtle {
+    background-image: linear-gradient(
+      to right,
+      var(--clr-primary-opacity-500),
+      var(--clr-primary-opacity-300)
+    );
+  }
+
+  @if $type == secondary-subtle {
+    background-image: linear-gradient(
+      to right,
+      var(--clr-secondary-opacity-500),
+      var(--clr-secondary-opacity-300)
+    );
+  }
+
+  @content;
+}
+
+.gradient {
+  &--primary-regular {
+    @include gradient(primary-regular);
+  }
+
+  &--secondary-regular {
+    @include gradient(secondary-regular);
+  }
+
+  &--primary-subtle {
+    @include gradient(primary-subtle);
+  }
+
+  &--secondary-subtle {
+    @include gradient(secondary-subtle);
+  }
+}
+
+///////////////////////////////////////////
+// Styles
+.uppercase {
+  text-transform: uppercase;
+}
+
+.cursive {
+  font-family: var((--ff-cursive));
+}
+
+///////////////////////////////////////////
+// Modification
+.awards {
+  &__second {
+    font-size: 7rem;
+
+    @include breakpoints.respond(phone-reg) {
+      font-size: 5rem;
+    }
+  }
+}

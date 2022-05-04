@@ -1,0 +1,73 @@
+@use 'breakpoints';
+
+///////////////////////////////////////////
+// Variables
+
+/* Font Sizes  */
+$type-scale: (
+  'regular': (
+    'heading': clamp(8rem, 12rem, 15rem),
+    'subheading': 2.4rem,
+    'label': 1.8rem,
+    'body': 1.6rem,
+    'caption': 1.4rem,
+  ),
+  'small': (
+    'heading': 8rem,
+    'subheading': 2rem,
+    'label': 1.4rem,
+    'body': 1.2rem,
+    'caption': 1rem,
+  ),
+);
+
+:root {
+  /* Font Sizes  */
+  @each $screen-size, $font-size in $type-scale {
+    @if $screen-size == 'regular' {
+      @each $size, $value in $font-size {
+        --fs-#{$size}: #{$value};
+      }
+    } @else {
+      @include breakpoints.respond(phone-reg) {
+        @each $size, $value in $font-size {
+          --fs-#{$size}: #{$value};
+        }
+      }
+    }
+  }
+
+  /* Font Family */
+  --ff-primary: 'Inter', sans-serif;
+  --ff-accent: 'Cormorant Garamond', serif;
+  --ff-cursive: 'Whisper', cursive;
+}
+
+///////////////////////////////////////////
+// Headings
+.heading-1 {
+  font-size: var(--fs-heading);
+  font-family: var(--ff-accent);
+  font-weight: 400;
+  line-height: 1.2;
+  color: var(--clr-neutral-100);
+}
+
+.heading-2 {
+  font-size: var(--fs-subheading);
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 1.5rem;
+  color: var(--clr-neutral-100);
+}
+
+.heading-3 {
+  font-size: var(--fs-label);
+  letter-spacing: 0.5rem;
+  font-weight: 700;
+  color: var(--clr-neutral-100);
+}
+
+.caption {
+  font-size: var(--fs-caption);
+}

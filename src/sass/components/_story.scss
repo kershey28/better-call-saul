@@ -1,0 +1,143 @@
+@use '../abstracts/breakpoints';
+@use '../abstracts/mixins';
+@use '../utilities/flow';
+@use '../abstracts/variables';
+
+.story {
+  //layout
+  display: flex;
+  text-align: left;
+
+  //styling
+  box-shadow: variables.$shadow-white-light;
+  border-radius: 35px;
+
+  //glass gradient
+  @include mixins.glass-gradient(
+    linear-gradient(
+      to right bottom,
+      var(--clr-white-opacity-100),
+      transparent,
+      transparent
+    )
+  );
+
+  //sizing
+  width: 40%;
+  height: 40rem;
+  overflow: hidden;
+
+  @include breakpoints.respond(tab-land) {
+    width: 70vw;
+  }
+
+  @include breakpoints.respond(phone-reg) {
+    width: 70vw;
+    flex-direction: column;
+    height: 50rem;
+  }
+
+  @include breakpoints.respond(phone-mini) {
+    width: 90%;
+  }
+
+  //children-1
+  &__caption {
+    flex-basis: 60%;
+    position: relative;
+    padding: 5rem;
+
+    //quotes
+    &::before,
+    &::after {
+      position: absolute;
+      font-size: 10rem;
+      opacity: 0.3;
+    }
+
+    &::before {
+      content: '\201C';
+      top: -2rem;
+      left: 1rem;
+    }
+
+    &::after {
+      content: '\201D';
+      right: 1rem;
+      bottom: -8rem;
+    }
+  }
+
+  &__quote {
+    margin-bottom: flow.$margin-md;
+  }
+
+  &__author,
+  &__description {
+    position: absolute;
+  }
+
+  &__author {
+    font-size: 1.5rem;
+    bottom: 5rem;
+  }
+
+  &__description {
+    font-size: 1.3rem;
+    bottom: 2rem;
+  }
+
+  //children-2
+  &__photo {
+    flex-basis: 40%;
+    width: 100%;
+    object-fit: cover;
+    position: relative;
+
+    @include breakpoints.respond(phone-reg) {
+      height: 50%;
+    }
+
+    //vignette
+    &::after {
+      content: '';
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 3;
+      background-image: linear-gradient(
+        to top,
+        var(--clr-black-opacity-500),
+        var(--clr-black-opacity-300),
+        var(--clr-black-opacity-100),
+        transparent
+      );
+      position: absolute;
+    }
+
+    //arrow
+    &::before {
+      content: '';
+      top: 5rem;
+      left: 0;
+      border-right: 25px solid transparent;
+      border-top: 25px solid var(--clr-neutral-900);
+      position: absolute;
+      z-index: 6;
+
+      @include breakpoints.respond(phone-reg) {
+        top: 0;
+        left: 50%;
+        border-top: 25px solid var(--clr-neutral-900);
+        transform: rotate(90deg);
+      }
+    }
+  }
+
+  &__img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: relative;
+  }
+}

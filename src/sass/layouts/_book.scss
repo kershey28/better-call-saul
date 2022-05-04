@@ -1,0 +1,50 @@
+@use '../abstracts/breakpoints';
+@use '../utilities/flow';
+@use '../abstracts/mixins';
+
+.book {
+  margin-top: 5rem;
+  height: 100rem;
+
+  @include breakpoints.respond(tab-land) {
+    height: 120rem;
+  }
+
+  //730px
+  @media only screen and (max-width: 45.625em) {
+    height: 140rem;
+  }
+
+  @include breakpoints.respond(phone-reg) {
+    height: 100rem;
+  }
+
+  &__heading {
+    margin-bottom: flow.$margin-lg;
+  }
+
+  &__sub-heading {
+    margin-bottom: flow.$margin-md;
+  }
+
+  &__img-box {
+    position: relative;
+    filter: grayscale(80%);
+
+    //vignette
+    @include mixins.vignette();
+  }
+
+  &__img {
+    @include breakpoints.respond(tab-port) {
+      width: 100%;
+    }
+  }
+
+  &__form {
+    //450px
+    @media only screen and (max-width: 28.125em) {
+      right: 12%;
+    }
+  }
+}
