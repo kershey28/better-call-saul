@@ -19,6 +19,9 @@
     position: absolute;
     z-index: 200;
 
+    //animation
+    animation: fade-in 2.5s backwards ease-in 1s;
+
     //children-2
     &__button {
       //position
