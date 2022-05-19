@@ -39,3 +39,10 @@
   box-shadow: none;
   border: none;
 }
+
+// carousel
+.reveal-accordion {
+  & .slide__accordion {
+    height: 100%;
+  }
+}

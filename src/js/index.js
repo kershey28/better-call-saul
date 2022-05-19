@@ -133,6 +133,7 @@ const slider = () => {
     activateDot(curSlide);
   };
 
+  // Prev Slide
   const prevSlide = () => {
     if (curSlide === 0) {
       curSlide = maxSlide - 1;
@@ -171,7 +172,7 @@ const slider = () => {
   // Timer
   const timer = () => {
     for (let i = 0; i < 7; i++) {
-      setTimeout(nextSlide, 1000 + i * 3000);
+      setTimeout(nextSlide, 7000 + i * 7000);
     }
   };
   timer();
@@ -202,6 +203,40 @@ const sliderObserver = new IntersectionObserver(playSlider, {
 sliderObserver.observe(sliderDOM);
 
 /********* Animations ********/
+
+///////////////////////////////////////
+//  Reveal Accordions
+
+//variables
+const slides = document.querySelectorAll('.slide');
+
+//functionality
+const revealAccordion = (entries, observer) => {
+  const [entry] = entries;
+  const addAccordion = () => {
+    entry.target.classList.add('reveal-accordion');
+  };
+  const removeAccordion = () => {
+    entry.target.classList.remove('reveal-accordion');
+  };
+
+  if (!entry.isIntersecting) return;
+
+  setTimeout(addAccordion, 3000);
+  setTimeout(removeAccordion, 7000);
+  observer.unobserve(entry.target);
+};
+
+//observer
+const slideObserver = new IntersectionObserver(revealAccordion, {
+  root: null,
+  threshold: 0.15,
+});
+
+//preset
+slides.forEach(section => {
+  slideObserver.observe(section);
+});
 
 ///////////////////////////////////////
 //  Reveal Sections
@@ -346,3 +381,5 @@ const letterObserver = new IntersectionObserver(animateLetter, {
 
 //preset
 letterObserver.observe(formDOM);
+
+console.log('TEST');
